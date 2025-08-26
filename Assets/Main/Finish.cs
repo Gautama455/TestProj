@@ -6,6 +6,12 @@ public class Finish : MonoBehaviour
     [SerializeField] private GameObject _finishPanel;
     private bool _isFinished = false;
 
+    private void Start()
+    {
+        if (_finishPanel != null)
+            _finishPanel.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (_isFinished)
@@ -14,12 +20,24 @@ public class Finish : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _isFinished = true;
-            HandleFinish();
+
+            if (_finishPanel != null)
+                _finishPanel.SetActive(true);
+
+            Time.timeScale = 0f;
         }
+
     }
 
-    private void HandleFinish()
+    public void RestartLevel()
     {
-        SceneManager.LoadScene("VictoryScene");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ExitToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

@@ -3,13 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField] private GameObject _gameOverPanel; // —сылка на панель Game Over UI
-
+    [SerializeField] private GameObject _gameOverPanel;
     private bool _isGameOver = false;
 
     private void Start()
     {
-        // —крываем панель Game Over в начале
         if (_gameOverPanel != null)
             _gameOverPanel.SetActive(false);
     }
@@ -30,7 +28,6 @@ public class Trap : MonoBehaviour
         }
     }
 
-
     public void RestartLevel()
     {
         Time.timeScale = 1f;
@@ -40,6 +37,6 @@ public class Trap : MonoBehaviour
     public void ExitToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenuScene");
     }
 }
