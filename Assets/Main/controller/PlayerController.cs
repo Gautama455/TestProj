@@ -27,7 +27,6 @@ namespace Game.Controller
 
         void Update()
         {
-            // Получаем входные данные
             _horizontalInput = Input.GetAxis("Horizontal");
             _verticalInput = Input.GetAxis("Vertical");
             _jumpInput = Input.GetButtonDown("Jump");

@@ -6,7 +6,7 @@ namespace Game.Model
     {
         public float Speed = 2f;
         public float RotationSpeed = 10f;
-        public float JumpForce = 5f;
+        public float JumpForce = 8f;
 
         public bool IsGrounded { get; set; }
     }
