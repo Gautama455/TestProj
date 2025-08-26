@@ -1,19 +1,13 @@
 using UnityEngine;
 
-namespace Game.Models
+namespace Game.Model
 {
-
     public class PlayerModel
     {
-        private Vector3 _position;
-        private readonly float _speed;
+        public float Speed = 2f;
+        public float RotationSpeed = 10f;
+        public float JumpForce = 5f;
 
-        public Vector3 Position => _position;
-
-        public PlayerModel(Vector3 startPosition, float speed)
-        {
-            _position = startPosition;
-            _speed = speed;
-        }
+        public bool IsGrounded { get; set; }
     }
 }
